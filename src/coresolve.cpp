@@ -84,12 +84,14 @@ std::string coresolution_result(
 
 int coresolve(
   bool debug,
-  std::string record_type
+  std::string record_type,
+  std::string name,
+  std::string network_id
 ) {
   if (debug)
     std::cout << "starting co-resolution" << std::endl;
 
-  std::vector<std::map<std::string, std::string>> network = getNetwork("d");
+  std::vector<std::map<std::string, std::string>> network = getNetwork(network_id);
   int network_size = network.size();
 
   if (debug)
@@ -107,7 +109,11 @@ int coresolve(
     std::cout << network[i].at("hostname") << std::endl;
     std::string response;
     try {
-      response = request(network[i], debug);
+      response = request(
+        debug,
+        "/" + name + "/" + record_type,
+        network[i]
+      );
       std::cout << "----- request success" << std::endl;
       std::cout << response.substr(0,40) << std::endl;
       responses[network[i].at("hostname")] = response;

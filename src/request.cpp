@@ -25,8 +25,9 @@ size_t cb_stdstring(
 }
 
 std::string request(
-  std::map<std::string, std::string> member,
-  bool debug
+  bool debug,
+  std::string path,
+  std::map<std::string, std::string> member
 ) {
   CURL *curl;
   CURLcode res;
@@ -50,7 +51,6 @@ std::string request(
   if(curl) {
     curl_easy_setopt(curl, CURLOPT_RESOLVE, host);
 
-    std::string path = "/hash";
     std::string url_string = "https://" + member.at("hostname") + ":" + member.at("port") + path;
 
     char url_chars[url_string.length() + 1];

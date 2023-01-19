@@ -25,6 +25,12 @@ static struct cag_option options[] = {
    .value_name = NULL,
    .description = "Simple flag"},
 
+  {.identifier = 'n',
+    .access_letters = "n",
+    .access_name = "name",
+    .value_name = "NAME",
+    .description = "Name or domain name"},
+
   {.identifier = 't',
     .access_letters = "t",
     .access_name = "type",
@@ -41,14 +47,15 @@ struct demo_configuration
   bool simple_flag;
   bool multiple_flag;
   bool long_flag;
-  const char *key;
+  const char *type;
+  const char *name;
 };
 
 int main(int argc, char** argv) {
   char identifier;
   const char *value;
   cag_option_context context;
-  struct demo_configuration config = {false, false, false, NULL};
+  struct demo_configuration config = {false, false, false, NULL, NULL};
   int param_index;
 
   /**
@@ -72,23 +79,24 @@ int main(int argc, char** argv) {
     case 'l':
       config.long_flag = true;
       break;
-    case 't':
-      std::cout << "yes TYPE";
+    case 'n':
       value = cag_option_get_value(&context);
-      config.key = value;
+      config.name = value;
+      break;
+    case 't':
+      value = cag_option_get_value(&context);
+      config.type = value;
       break;
     case 'h':
-      printf("Usage: cargsdemo [OPTION]...\n");
-      printf("Demonstrates the cargs library.\n\n");
       cag_option_print(options, CAG_ARRAY_SIZE(options), stdout);
-      printf("\nNote that all formatting is done by cargs.\n");
       return EXIT_SUCCESS;
     }
   }
 
-  printf("simple_flag: %i, multiple_flag: %i, long_flag: %i, key: %s\n",
+  printf("simple_flag: %i, multiple_flag: %i, long_flag: %i, type: %s, name: %s\n",
     config.simple_flag, config.multiple_flag, config.long_flag,
-    config.key ? config.key : "-");
+    config.type ? config.type : "-",
+    config.name ? config.name : "-");
 
   for (param_index = context.index; param_index < argc; ++param_index) {
     printf("additional parameter: %s\n", argv[param_index]);
@@ -99,21 +107,29 @@ int main(int argc, char** argv) {
     return 0;
   }
 
+  std::string name;
+  if (config.name) {
+    name = config.name;
+  } else {
+    std::cout << std::string("missing --name parameter") << std::endl;
+    return 1;
+  }
+
   std::string record_type = "A";
-  if (config.key) {
+  if (config.type) {
     if (
-      config.key == std::string("A") ||
-      config.key == std::string("AAAA") ||
-      config.key == std::string("TXT") ||
-      config.key == std::string("CERT") ||
-      config.key == std::string("CNAME")
+      config.type == std::string("A") ||
+      config.type == std::string("AAAA") ||
+      config.type == std::string("TXT") ||
+      config.type == std::string("CERT") ||
+      config.type == std::string("CNAME")
     ) {
-      record_type = config.key;
+      record_type = config.type;
     } else {
       std::cout << std::string("unrecognized --type parameter") << std::endl;
       return 1;
     }
   }
 
-  return coresolve(debug, record_type);
+  return coresolve(debug, record_type, name, std::string("local"));
 }
