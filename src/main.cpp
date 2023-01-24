@@ -31,6 +31,12 @@ static struct cag_option options[] = {
     .value_name = "NAME",
     .description = "Name or domain name"},
 
+  {.identifier = 'i',
+    .access_letters = "net",
+    .access_name = "network",
+    .value_name = "NETWORK",
+    .description = "ID of the dappy network"},
+
   {.identifier = 't',
     .access_letters = "t",
     .access_name = "type",
@@ -49,6 +55,7 @@ struct demo_configuration
   bool long_flag;
   const char *type;
   const char *name;
+  const char *network;
 };
 
 int main(int argc, char** argv) {
@@ -79,6 +86,10 @@ int main(int argc, char** argv) {
     case 'l':
       config.long_flag = true;
       break;
+    case 'i':
+      value = cag_option_get_value(&context);
+      config.network = value;
+      break;
     case 'n':
       value = cag_option_get_value(&context);
       config.name = value;
@@ -93,10 +104,15 @@ int main(int argc, char** argv) {
     }
   }
 
-  printf("simple_flag: %i, multiple_flag: %i, long_flag: %i, type: %s, name: %s\n",
-    config.simple_flag, config.multiple_flag, config.long_flag,
-    config.type ? config.type : "-",
-    config.name ? config.name : "-");
+  if (debug) {
+    printf(
+      "type: %s, name: %s, network: %s\n",
+      config.type ? config.type : "-",
+      config.name ? config.name : "-",
+      config.network ? config.network : "-"
+    );
+  }
+
 
   for (param_index = context.index; param_index < argc; ++param_index) {
     printf("additional parameter: %s\n", argv[param_index]);
@@ -115,6 +131,13 @@ int main(int argc, char** argv) {
     return 1;
   }
 
+  std::string network_id = "d";
+  if (config.network) {
+    network_id = config.network;
+  }
+  if (debug)
+    std::cout << "network : " + network_id << std::endl;
+
   std::string record_type = "A";
   if (config.type) {
     if (
@@ -131,5 +154,5 @@ int main(int argc, char** argv) {
     }
   }
 
-  return coresolve(debug, record_type, name, std::string("local"));
+  return coresolve(debug, record_type, name, network_id);
 }

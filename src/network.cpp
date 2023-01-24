@@ -21,14 +21,16 @@ std::vector<std::map<std::string, std::string>> dNetwork = {
 
 std::vector<std::map<std::string, std::string>> gammaNetwork = {
   {
-    {"ip", "143.244.205.40"},
+    {"ip", "104.248.101.247"},
     {"port", "443"},
-    {"hostname", "node1.d.fabco.dappy"},
+    {"hostname", "node1.gamma.fabco.dappy"},
+    {"caCert", "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lKQU9YaHVHZUtqWFV1TUEwR0NTcUdTSWIzRFFFQkN3VUFNQ0l4SURBZUJnTlYKQkFNTUYyNXZaR1V4TG1kaGJXMWhMbVpoWW1OdkxtUmhjSEI1TUI0WERUSXlNRGt5TXpJek1URXlNMW9YRFRNdwpNVEl4TURJek1URXlNMW93SWpFZ01CNEdBMVVFQXd3WGJtOWtaVEV1WjJGdGJXRXVabUZpWTI4dVpHRndjSGt3CmdnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUURlTlg5eDE0QW9XV0oyVGRLVmYzNXgKYWpnS29Ld1VhcmlmYXJlZXBzQ2tQRkhBNXVnZTlsUnduVm5TSlBYR3ZXUFJJQUh4M052TjQ2ODlKaWIrcmhiZwpGeWtlRmNoNmJKZnM2SWhwbmpzL0J0UDlpTDhqalN6ekhqSEJwNUNkNHMyK1lxbFEzc0NocVhVQUkvNHcyTFFBClkvTVpHU1UzeDBmWmZaYzFWN1YyWmU5bVVXWUpkWFN3cG5Pa0dTRkd2UU8vcVJxeHpmS0FUSXRpM1RqMkJVU0YKUFl4NnUzM01MWnE2Q0pHSFhBWXRXeUQwb0RMMTdrMkZodjI1dktlS2hSVFJaanYvdmJVOE5Ibm9TN1Q3NWFxOApOWnBIVWNMbHZKdW9GZ2VMa1JxY1IxaEk3OGRwRG8xOTVjTm5jMkhtSDVXc3dzWVZrYXhqZXFVTGRRNHpmazJMCkFnTUJBQUdqTnpBMU1BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0lnWURWUjBSQkJzd0dZSVhibTlrWlRFdVoyRnQKYldFdVptRmlZMjh1WkdGd2NIa3dEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBRkdwdnVhbEtHR2JyMzV1bVk1VgpsTytRbFlPNWdoRm5hcWhha1hZcFdJZnFXVENTUWszMXFGelJiQmI2d094YTFnWmZqRkNyaFNLdVlWeEVnYytBCjZ2STkwcnNpVkRYcFFwS0hpTVc1REdEQWRVWWdZaG1HTmRYZVNLVHJHNlQwOGVQNzFZVG10UVhRZmUwQUNSbFYKaWZ1QmVyQktDOVIyZk9TdWNYMzFER3hlV2pmUlYxSkI5U1VQT1p4YjYvLzU2QWFQNGdmdHNtL3loc3FSTitFTwpuZWczZlZybEhBWkV0UnhZbDcxWGkxekZQdml4RkgwNDc4T0FOZlJoRWZralc4K1YzdGJacFdsTXF1ZFJGSVo0CmxzZW95Q3ZyUi9vUUtxM285c05OeXlSNEU5MjIyL1dVYWUrUHFXK2pXSG1EaTVZWGZnWDFRMGRCYnJuQXB6MFQKWXVNPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t"}
   },
   {
-    {"ip", "95.111.244.128"},
+    {"ip", "104.248.101.247"},
     {"port", "443"},
-    {"hostname", "node1.d.pathrock.dappy"},
+    {"hostname", "node2.gamma.fabco.dappy"},
+    {"caCert", "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lKQU4veURtdllUd1g5TUEwR0NTcUdTSWIzRFFFQkN3VUFNQ0l4SURBZUJnTlYKQkFNTUYyNXZaR1V5TG1kaGJXMWhMbVpoWW1OdkxtUmhjSEI1TUI0WERUSXlNRGt5TXpJek1UVTFNbG9YRFRNdwpNVEl4TURJek1UVTFNbG93SWpFZ01CNEdBMVVFQXd3WGJtOWtaVEl1WjJGdGJXRXVabUZpWTI4dVpHRndjSGt3CmdnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUURVd1h6UUhTMU9pRTJ3czgvN3RmQnMKMGdUdHgxeTJ2dzFrd2lHcGFTMEI4b0hCUVM4MjRjVFE1c2VLVVFEdnU4M1ltSHMxcktpb0V6THU1MThITTBxRwpIWHh4S2UwdHJwWWtQb3VEMEZQTExndlNwb215c2VOMHQ0NnVLZXNIRXh0RGFHZmNVbWo2OXhQOVNoYTYrRU45Cm1kSE9TbnV6QVdQVXBhMjZid2plVkhGbDlkSmNmMFEveS9qS1pHYjhsYThGTmRQN2tNQU10eWdpZk5EaFVGVngKZ2Z0K3VwczB4NFV2aWRNNmFzWCtScFFqRnRwTTZuMi9xUU9vSWdkSnNJdGYzQlM1NngwS1VFYmNEelkyb2RPdwpnVE5SN3pLVHdBdll1Wmg5TXViUGZReVpPM1ZHY1JhR1lxQWhQbDdTWTh0eXE3Q0Q4M3poOWtORWZTdVM2c20vCkFnTUJBQUdqTnpBMU1BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0lnWURWUjBSQkJzd0dZSVhibTlrWlRJdVoyRnQKYldFdVptRmlZMjh1WkdGd2NIa3dEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBTHRGSkVVRnpoMUFiOFAvSEVLZgpTRmVKempuZVNCU3J3eEtrNVBhcnkrejVtRzc1NkkzUzdyTnRzemwwZlc0WEdzWldZZHNjMU5sOVpPRmswUEVuCmlXS21QeW9DT3UxY3hJcDRpamN4VUtmRXFlZ2dJSE9ydlVlajdYUDBTMHhScjFSRkoxT1NSSjZLSE1FYWM2aXkKQmRRcFlCNzhDODMyZk9JWWJPbzFHLytKamxmTERRdnhXdGxYVENHajhNUWNyaGtaQVkxOG1RR3pHZi9rRDRIbQo2Y3dSUmdoYVFxdktaQ1FMQ1JuNDBSNnI3R2pUQjB6d0R2aGE4bGZ4Z2hmUjQwbGRJWkR0ZlJ3TVd5T2RoWVVNCk5tdWdZcldMVjA2YVlQZFplSjRFdkVVYjEyRlhaTUt0L0dUWlpzeVJUbWFLc290VzJ2eTlIckJNaStsbGZlSWsKUjB3PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t"}
   },
 };
 
@@ -59,7 +61,7 @@ std::vector<std::map<std::string, std::string>> getNetwork(std::string networkId
 
   for (int i = 0; i < localNetwork.size(); i++) {
     char cert_base64[localNetwork[i].at("caCert").length() + 1];
-    strcpy(cert_base64, localNetwork[i].at("caCert").c_str()); 
+    strcpy(cert_base64, localNetwork[i].at("caCert").c_str());
     size_t cert_base64len = sizeof(cert_base64);
     char out3[cert_base64len];
     size_t out3len;
@@ -69,6 +71,21 @@ std::vector<std::map<std::string, std::string>> getNetwork(std::string networkId
     std::string certificate_string = std::string(out3).substr(0, out3len);
     std::map<std::string, std::string>::iterator it = localNetwork[i].find("caCert");
     if (it != localNetwork[i].end())
+      it->second = certificate_string;
+  }
+
+  for (int i = 0; i < gammaNetwork.size(); i++) {
+    char cert_base64[gammaNetwork[i].at("caCert").length() + 1];
+    strcpy(cert_base64, gammaNetwork[i].at("caCert").c_str());
+    size_t cert_base64len = sizeof(cert_base64);
+    char out3[cert_base64len];
+    size_t out3len;
+    base64_decode(cert_base64, cert_base64len, out3, &out3len, 0);
+    // have to do this substr, if not there is a strange
+    // last character after end of PEM -----
+    std::string certificate_string = std::string(out3).substr(0, out3len);
+    std::map<std::string, std::string>::iterator it = gammaNetwork[i].find("caCert");
+    if (it != gammaNetwork[i].end())
       it->second = certificate_string;
   }
 
